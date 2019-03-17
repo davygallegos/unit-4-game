@@ -8,14 +8,15 @@
 // var blueGem = $('#blCrystal')
 // var yellowGem = $('#yeCrystal');
 // var greenGem = $('#grCrystal');
-var totalWins = '';
-var totalLoses = '';
-var computerRandom = '';
-var totalNumber = '0';
-var crystalBlue = 0;
-var crystalYellow = 0;
-var crystalRed = 0;
-var crystalGreen = 0;
+var totalWins = 0;
+var totalLoses = 0;
+var computerRandom ;
+var totalNumber ;
+var crystalBlue ;
+var crystalYellow ;
+var crystalRed ;
+var crystalGreen ;
+var reset ;
 
 //Crystals activity
 
@@ -44,21 +45,44 @@ $("#blCrystal").on("click", function() {
     totalNumber = totalNumber + crystalBlue
     $('.totalNumber').text(totalNumber);
     //check if you won if statements 
+
 });
 $("#grCrystal").on("click", function() {
     totalNumber = totalNumber + crystalGreen
     $('.totalNumber').text(totalNumber);
+    scoreCheck();
 });
 $("#ReCrystal").on("click", function() {
     totalNumber = totalNumber + crystalRed
     $('.totalNumber').text(totalNumber);
+    scoreCheck();
+
 });
 $("#yeCrystal").on("click", function() {
     totalNumber = totalNumber + crystalYellow
     $('.totalNumber').text(totalNumber);
+    scoreCheck();
+
 });
 
 //Step
 //Step win or lose
+function scoreCheck() {
+    if (totalNumber===computerRandom) {
+        $ (".playAgain").text("You Won Champ, Go get em")  
+        totalWins++
+        $(".wins").text("Wins = "+ totalWins)
+        
+        
+    }
+    else if (totalNumber>computerRandom) {
+        $ (".playAgain").text("You Lost Scumbag, Go get em")  
+        totalLoses++
+        $(".losses").text("Loser Count = "+ totalLoses)
+    }
+    
+}
 // if statements
-// alert 
+// 
+// need a stop click after game
+
