@@ -24,7 +24,8 @@ var reset ;
     //computer needs to pick a number
     //need to assign a random number to crystal
     //set total number to 0
-var start = function () {
+// var start = function () 
+function start() {
     console.log('running');
     totalNumber = 0;
     computerRandom = Math.floor(Math.random() * 111) + 19;
@@ -72,6 +73,7 @@ function scoreCheck() {
         $ (".playAgain").text("You Won Champ, Go get em")  
         totalWins++
         $(".wins").text("Wins = "+ totalWins)
+        start();
         
         
     }
@@ -79,6 +81,7 @@ function scoreCheck() {
         $ (".playAgain").text("You Lost Scumbag, Go get em")  
         totalLoses++
         $(".losses").text("Loser Count = "+ totalLoses)
+        start();
     }
     
 }
